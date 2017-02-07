@@ -69,6 +69,7 @@ oracledb.getConnection(
                         path:   FilePath,
                         mtime:  tm
                     });
+                    fs.writeFileSync('test.json', JSON.stringify(fileArray, null, 4));
                  //  fileArray.push(FilePath);
                    // readFile(FilePath,function(){});
                 }
