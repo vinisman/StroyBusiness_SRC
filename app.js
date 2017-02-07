@@ -5,9 +5,9 @@ var oracledb = require('oracledb');
 
 oracledb.getConnection(
     {
-      user          : "atc_demo",
-      password      : "atc32w",
-      connectString : "192.168.32.220/orcl.at-consulting.ru"
+      user          : "SCOTT",
+      password      : "SCOTT",
+      connectString : "192.168.1.103/orcl"
     },
     function(err, connection)
     {
@@ -21,9 +21,10 @@ oracledb.getConnection(
           if(array[i].trim() != '')
           {
             console.log("SQL statement: " + array[i].trim());
-            console.log("----------------------------------------");
+
             connection.execute(array[i].trim(), {}, handleErr(result => {
                   console.log('ran:', result.rows);
+            console.log("----------------------------------------");
           }));
             // var result = connection.execute(array[i].trim());
             //  console.log(result.rows);
